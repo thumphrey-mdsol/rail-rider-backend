@@ -1,0 +1,2 @@
+class ArrivaltimesController < ApplicationController
+end

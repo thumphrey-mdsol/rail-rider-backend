@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :arrivaltimes
   resources :trainlines
   resources :arrivals
   resources :stops
