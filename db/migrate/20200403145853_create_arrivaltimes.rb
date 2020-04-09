@@ -3,8 +3,8 @@ class CreateArrivaltimes < ActiveRecord::Migration[6.0]
     create_table :arrivaltimes do |t|
       t.string :line
       t.string :delay
-      t.integer :arrival
-      t.integer :departure
+      t.string :arrival_time
+      t.integer :departure_time
       t.integer :arrival_id
       t.string :direction
 

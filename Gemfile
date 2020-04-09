@@ -12,6 +12,7 @@ gem "rest-client"
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'rack-cors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record

@@ -10,14 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_171124) do
+ActiveRecord::Schema.define(version: 2020_04_03_145853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "arrivals", force: :cascade do |t|
     t.integer "stop_id"
-    t.integer "line_id"
+    t.integer "trainline_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "arrivaltimes", force: :cascade do |t|
+    t.string "line"
+    t.string "delay"
+    t.string "arrival_time"
+    t.integer "departure_time"
+    t.integer "arrival_id"
+    t.string "direction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

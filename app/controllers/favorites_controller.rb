@@ -6,6 +6,6 @@ class FavoritesController < ApplicationController
 
     def index
         favorites = Favorite.all
-        render json: favorites
+        render json: favorites, include: [:stops, :users]
     end
 end
