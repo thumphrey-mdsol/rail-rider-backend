@@ -3,12 +3,12 @@ class UsersController < ApplicationController
     
     def show
         user = User.find(params[:id])
-        render json: user
+        render json: user, include: [:favorites, :stops]
     end
 
     def index
         users = User.all
-        render json: users, include: [:stops]
+        render json: users, include: [:favorites, :stops]
     end
 
     def create

@@ -31,9 +31,13 @@ subway_info.each do |object|
     if object["line"].split("").length > 0
         obj = object["line"].scan(/\w+/)
         obj.each do |line|
-            train = Trainline.find_or_create_by(name: line)
-            train.update(destination: destination_array.sample)
-            Arrival.create(stop_id: stop.id,trainline_id: train.id)
+            if line === "Express"
+                puts'express'
+            else
+                train = Trainline.find_or_create_by(name: line)
+                train.update(destination: destination_array.sample)
+                Arrival.create(stop_id: stop.id,trainline_id: train.id)
+            end
         end
     end
 end
@@ -72,7 +76,7 @@ def arrival_time
 end
 
 puts "seeding arrivals"
-100.times do
+1000.times do
     # Arrivaltime.create(stop_id:  rand(Stop.first.id..Stop.last.id), trainline_id: rand(Trainline.first.id..Trainline.last.id))
     Arrivaltime.create(arrival_id: rand(Arrival.first.id..Arrival.last.id), arrival_time: arrival_time)
 end
